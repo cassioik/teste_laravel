@@ -18,7 +18,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ route('home') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,8 +38,6 @@
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                             <li><a class="nav-link" href="{{ route('register') }}">{{ __('Registrar') }}</a></li>
                         @else
-                            <li><a class="nav-link" href="{{ route('users.index') }}">Usuários</a></li>
-                            <li><a class="nav-link" href="{{ route('roles.index') }}">Funções</a></li>
                             <li><a class="nav-link" href="{{ route('products.index') }}">Produtos</a></li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -48,6 +46,12 @@
 
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    @can('user-list')
+                                        <a class="dropdown-item" href="{{ route('users.index') }}">Usuários</a>
+                                    @endcan
+                                    @can('role-list')
+                                        <a class="dropdown-item" href="{{ route('roles.index') }}">Perfis</a>
+                                    @endcan
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
