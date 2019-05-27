@@ -57,5 +57,6 @@
 
     {!! $products->links() !!}
 
-
+    {{-- Testando o componente Vue --}}
+    <example-component></example-component>
 @endsection
