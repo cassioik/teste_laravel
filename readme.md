@@ -10,6 +10,6 @@
 8. Rode o comando `php artisan serve`
 
 ### Nesse projeto estou testando alguns itens que pretendo sempre usar nos projetos:
--Perfis e permissões de usuario: spatie/laravel-permission
--Log de ações do usuario: spatie/laravel-activitylog
--Softdelete 
+1. Perfis e permissões de usuario: spatie/laravel-permission
+2. Log de ações do usuario: spatie/laravel-activitylog
+3. Softdelete 
